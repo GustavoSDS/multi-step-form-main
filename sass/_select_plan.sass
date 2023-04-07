@@ -1,0 +1,114 @@
+@use 'variables' as var
+@use 'mixins' as mix
+
+.select-plan
+    @include mix.section-card(566px, none)
+
+    &__container
+        min-height: 77px
+        margin-bottom: 12px
+        padding: 15px 0
+        border-radius: 8px
+        border: 1px solid var.$Light-gray
+        display: flex
+        flex-direction: row
+        align-items: flex-start
+        @include mix.width-height(295px, auto, false)
+        @include mix.width-height(138px, auto, true)
+        &:hover
+            border: 1px solid var.$Purplish-blue
+            cursor: pointer
+        &--active
+            border: 1px solid var.$Purplish-blue
+    &__image
+        display: inline-block
+        width: 40px
+        margin-left: 15px
+        margin-right: 15px
+    &__details
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+    &__text
+        font-size: 1rem
+        font-weight: 500
+        color: var.$Marine-blue
+        letter-spacing: 0.01em
+    &__price
+        color: var.$Cool-gray
+        margin-top: 4px
+    &__free-months
+        display: none
+        color: var.$Marine-blue
+        font-weight: 400
+    &__change-plan
+        margin-top: 30px
+        width: 100%
+        height: 55px
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+        border: none
+        border-radius: 8px
+        color: var.$Cool-gray
+        background-color: var.$Alabaster
+    &__name-plan
+        font-weight: 500
+        &--active
+            color: var.$Marine-blue
+    &__toggle-wrapper
+        position: relative
+        display: inline-block
+        width: 38px
+        height: 20px
+        border-radius: 10px
+        background-color: var.$Marine-blue
+        input
+            display: none
+        label
+            display: block
+            position: absolute
+            cursor: pointer
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            &:after
+                content: ''
+                display: block
+                position: absolute
+                top: 4px
+                left: 4px
+                width: 12px
+                height: 12px
+                background-color: var.$White
+                border-radius: 50%
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+                transition: transform 0.3s
+
+        input:checked+label:after
+            transform: translateX(18px)
+
+    @media screen and ( min-width: 1200px )
+        &__form
+            display: flex
+            justify-content: space-between
+            flex-direction: row
+            margin-bottom: 30px
+        &__container
+            margin: 0
+            min-height: 160px
+            flex-direction: column
+            justify-content: space-between
+        &__details
+            margin-left: 15px
+            margin-top: 40px
+        &__price
+            margin: 6px 0
+        &__change-plan
+            width: 100%
+            justify-content: center
+            margin: auto
+            background-color: var.$Magnolia
+        &__toggle-wrapper
+            margin: 0 24px

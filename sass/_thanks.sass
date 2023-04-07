@@ -1,0 +1,28 @@
+@use 'variables' as var
+@use 'mixins' as mix
+
+.thanks
+    @include mix.section-card(400px, none)
+
+    &__image
+        width: 56px
+        display: block
+        margin: 45px auto 25px
+    .title
+        text-align: center
+    &__text
+        width: 296px
+        margin: 14px auto
+        text-align: center
+        line-height: 25px
+        color: var.$Cool-gray
+
+    @media screen and ( min-width: 1200px )
+        height: 240px
+        margin-top: 162px
+        &__image
+            width: 80px
+            margin-top: 0
+        &__text
+            width: 100%
+            margin-top: 15px

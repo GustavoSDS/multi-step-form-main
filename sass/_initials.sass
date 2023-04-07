@@ -1,0 +1,30 @@
+@use 'variables' as var
+@use 'mixins' as mix
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font: var.$Font-size var.$Font-family
+body
+    background-color: var.$Magnolia
+
+.main
+    @include mix.width-height(375px, 100vh, false)
+    @include mix.width-height(940px, 600px, true)
+    margin: auto
+    @media (min-width: 1200px)
+        margin: 105px auto
+        padding: 16px
+        overflow: hidden
+        display: flex
+        border-radius: 18px
+        background-color: var.$Alabaster
+
+.attribution
+    display: none
+    visibility: hidden
+    font-size: 11px
+    text-align: center
+    a
+        color: hsl(228, 45%, 44%)

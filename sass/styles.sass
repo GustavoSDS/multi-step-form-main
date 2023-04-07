@@ -1,0 +1,62 @@
+@use 'variables' as var
+@use 'mixins' as mix
+@use 'initials'
+@use 'sidebar'
+@use 'personal_info'
+@use 'select_plan'
+@use 'add_ons'
+@use 'finishing-up'
+@use 'thanks'
+
+.title
+    color: var.$Marine-blue
+    font-weight: 700
+    @include mix.fontSize(1.5rem, false)
+    @include mix.fontSize(2rem, true)
+
+.description
+    margin: 15px 0 24px
+    color: var.$Cool-gray
+    letter-spacing: -0.015em
+    font-weight: 400
+    @include mix.fontSize(1.0625rem, false)
+    @include mix.fontSize(1.0313rem, true)
+
+.card
+    @include mix.width-height(100%, 667px, false)
+    @include mix.width-height(634px, 568px, true)
+    max-height: 761px
+    margin: auto
+    position: relative
+
+.btn-container
+    background-color: var.$White
+    position: absolute
+    padding: 0 16px
+    bottom: 0
+    right: 0
+    display: flex
+    align-items: center
+    @include mix.width-height(100%, 72px, false)
+    @include mix.width-height(455px, 72px, true)
+
+    @media screen and ( min-width: 1200px )
+        margin: auto
+        left: 0
+        padding: 0
+        background-color: var.$Alabaster
+
+    &__btn-confirm
+        @include mix.btn(none, var.$Purplish-blue, var.$Pastel-blue)
+
+    &__btn-back
+        display: none
+        border: none
+        font-weight: 500
+        color: var.$Cool-gray
+        background-color: var.$White
+        &:hover
+            cursor: pointer
+            color: var.$Marine-blue
+    &__btn-next
+        @include mix.btn(block, var.$Marine-blue, var.$Purplish-blue)

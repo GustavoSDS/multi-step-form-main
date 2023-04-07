@@ -1,0 +1,51 @@
+@use 'variables' as var
+
+@mixin section-card($height, $display)
+    width: 343px
+    height: $height
+    @include width-height(455px, 512px, true)
+    display: $display
+    margin: -73px auto
+    padding: 35px 24px 0
+    border-radius: 10px
+    background-color: var.$White
+    box-shadow: 0px 25px 40px -20px var.$Light-gray
+    transition: transform 0.3s
+    @media screen and ( min-width: 1200px )
+        background-color: var.$Alabaster
+        box-shadow: none
+        margin: 40px auto
+        padding: 0
+
+@mixin btn($display, $bg-color, $bg-color-hover)
+    @include width-height(124px, 48px, true)
+    width: 97px
+    height: 40px
+    position: absolute
+    right: 16px
+    color: var.$White
+    display: $display
+    border: none
+    background-color: $bg-color
+    border-radius: 4px
+    &:hover
+        cursor: pointer
+        background-color: $bg-color-hover
+    @media screen and ( min-width: 1200px )
+        right: 0
+
+@mixin fontSize($size, $desktop)
+    @if $desktop
+        @media screen and ( min-width: 1200px )
+            font-size: $size
+    @else
+        font-size: $size
+
+@mixin width-height($width, $height, $desktop)
+    @if $desktop
+        @media screen and ( min-width: 1200px )
+            width: $width
+            height: $height
+    @else
+        width: $width
+        height: $height

@@ -1,0 +1,56 @@
+@use 'variables' as var
+@use 'mixins' as mix
+.finishing-up
+    @include mix.section-card(365px, none)
+    color: var.$Cool-gray
+    &__services-selected
+        background-color: var.$Alabaster
+        padding: 15px
+        border-radius: 8px
+        height: auto
+        min-height: 145px
+        margin-bottom: 15px
+    &__container
+        display: flex
+        justify-content: space-between
+        margin-bottom: 15px
+    &__total
+        padding: 0 15px
+
+    &__container-plan
+        border-bottom: 1px solid var.$Light-gray
+
+    &__text
+        display: flex
+        flex-direction: column
+        padding-bottom: 10px
+        a
+            font-weight: 500
+            width: 55px
+            color: var.$Cool-gray
+            text-decoration: none
+            border-bottom: 2px solid var.$Cool-gray
+            &:hover
+                color: var.$Purplish-blue
+                border-bottom: 2px solid var.$Purplish-blue
+
+    #price-plan, &__text span
+        color: var.$Marine-blue
+        font-weight: 700
+
+    #price-service
+        color: var.$Marine-blue
+
+    #price-total
+        color: var.$Purplish-blue
+        font-weight: 500
+
+    @media screen and ( min-width: 1200px )
+        &__services-selected
+            min-height: 183px
+            padding: 24px
+            display: flex
+            flex-direction: column
+            justify-content: space-evenly
+        &__total
+            padding: 0 25px

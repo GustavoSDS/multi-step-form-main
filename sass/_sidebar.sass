@@ -1,0 +1,49 @@
+@use 'variables' as var
+@use 'mixins' as mix
+.sidebar
+    @include mix.width-height(100%, 172px, false)
+    @include mix.width-height(274px, 100%, true)
+    background-image: url('../assets/images/bg-sidebar-mobile.svg')
+    display: flex
+    justify-content: center
+    &__steps
+        margin: 32px 8px 0
+    &__title, &__subtitle
+        display: none
+        visibility: hidden
+    &__number
+        width: 33px
+        height: 33px
+        display: grid
+        place-content: center
+        font-weight: 700
+        color: var.$White
+        border: 1px solid var.$White
+        border-radius: 100%
+        &--active
+            background-color: var.$Pastel-blue
+            color: var.$Marine-blue
+            border: none
+
+    @media screen and ( min-width: 1200px )
+        border-radius: 10px
+        background-image: url('../assets/images/bg-sidebar-desktop.svg')
+        background-repeat: no-repeat
+        flex-direction: column
+        justify-content: start
+        &__steps
+            display: flex
+            margin: 30px 32px 0
+            &:nth-child(1)
+                margin-top: 40px
+            div
+                margin-right: 15px
+        &__title, &__subtitle
+            display: block
+            visibility: visible
+            text-transform: uppercase
+        &__title
+            color: var.$Cool-gray
+        &__subtitle
+            color: var.$White
+            font-weight: 500

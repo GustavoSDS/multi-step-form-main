@@ -1,0 +1,43 @@
+@use 'variables' as var
+@use 'mixins' as mix
+.personal-info
+    @include mix.section-card(376px, block)
+
+    &__form
+        display: flex
+        flex-direction: column
+    &__label
+        color: var.$Marine-blue
+        font-weight: 500
+        @include mix.fontSize(.8125rem, false)
+        @include mix.fontSize(.875rem, true)
+    &__message-error
+        display: none
+        float: right
+        font-weight: 500
+        font-size: .9rem
+        color: var.$Strawberry-red
+    .border-error
+        border-color: var.$Strawberry-red
+    
+    &__input
+        height: 40px
+        margin: 4px 0 15px
+        padding-left: 16px
+        border-radius: 4px
+        border: 1px solid var.$Light-gray
+        outline: none
+        &::placeholder
+            @include mix.fontSize(.9375rem, false)
+            @include mix.fontSize(1rem, true)
+            font-weight: 400
+            letter-spacing: 0.02em
+            color: var.$Cool-gray
+        &:hover
+            cursor: pointer
+            border-color: var.$Purplish-blue
+
+    @media screen and ( min-width: 1200px )
+        &__input
+            &::placeholder
+                letter-spacing: 0.01em
